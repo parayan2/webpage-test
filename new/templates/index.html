@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+      <style>
+
+        h1{text-align: center;color:black}
+        h2{text-align: center;color:black ;font-size:25 }
+        h3{text-align: center;color:black ;font-size:20}
+        li{text-align: left ; font-size:20 ;font-family:Arial, Helvetica, sans-serif; font-style:normal ; color:black;font-weight:500 }
+        .my-head{height:auto;width:auto;font-size:25;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;padding:5px;width:100%;margin:auto}
+        .resultbutton{font-size:25 ; font-family:'Times New Roman', Times, serif;height:auto ; width:auto;color:black;background-color:tan;}
+        .my-box{width:700 ; height:1000 ;padding: 10px; background:aliceblue;font-family:Courier ; margin :0 0 0 300}
+        .my-result{font-size:15;font-family:georgia;margin:auto}
+        .my-title{font-size:50; text-align:center}
+        body{background-color:aliceblue}
+        a:link{color:black; text-decoration:none;}
+        a:visited{color:chocolate;text-decoration:none;}
+        a:hover{color:cyan;text-decoration:underline}
+        input{width:auto ;height:25;}
+
+        
+      </style>
+    </head>       
+         <div class="my-box" >
+            <h1 class="my-title">중고나라 도우미</h1>
+            <h2> 중고나라에 올라온 물건의 가격들을 한 눈에 쉽게 파악할 수 있습니다.</h2>
+            <form action="/" class="my-head" method="post" font-size=20>
+              <input type = "text" id = "name" name = "Name" placeholder="검색할 물건을 입력하세요" style="width:500px;height:50px;font-size:30px;">
+              <button type="submit" class="resultbutton" >가격 검색</button>
+            <h3> 검색된 가격을 클릭하시면 해당 가격을 가진 물건의 네이버 검색결과로 이동합니다. </h3>
+            </form>  
+              <ul style="list-style-type: none;">
+                {% for value in list2 %}
+                <li><a href ='https://search.naver.com/search.naver?where=article&sm=tab_jum&query="{{plusurl}}""{{value}}원"%20중고나라%20판매중%20개인거래(판매)%20-완료%2B&prdtype=0&t=0&st=rel&date_option=0&date_from=&date_to=&srchby=text&dup_remove=1&cafe_url=&without_cafe_url=&board=&sm=tab_pge&start=1' target="_blank">{{value}}원</a></li>
+                {% endfor %}  
+              </ul>
+         </div>
+
+    </body>
+
+</html>
